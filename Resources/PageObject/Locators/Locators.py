@@ -14,6 +14,13 @@ setup_home_page = {
     "objectmangersdbtn":"//a[@title='Object Manager']/parent::li//a[@role='button']",
     "newObjectbtn":"New Object"
 }
+#salesforce app launcher wraffle
+app_launcher = {
+    "wraffle":"//div[contains(@class,'appLauncher')]//button",
+    "searchApp":"//input[@placeholder='Search apps and items...']",
+    "Accounts":"//*[text()='Accounts']/ancestor::a",
+    "Contacts":"//*[text()='Contacts']/ancestor::a"
+}
 
 #salesforce records list view page
 records_list_page = {
@@ -27,4 +34,20 @@ record_modal = {
     "cancel" : "//button[text()='Cancel']"
 }
 
-core_connect_xp = "xpath://span[@title='Core Connect']"
+#account creation modal
+accounts_modal = {
+"modalTitle":"//h2[text()='New Account']",
+"accountName":"//label[text()='Account Name']/ancestor::lightning-input//div/input[@name='Name']",
+"phone":"//label[text()='Phone']/ancestor::lightning-input//div/input[@name='Phone']"
+}
+
+#contact creation modal
+contacts_modal = {
+"modalTitle":"//h2[text()='New Contact']",
+"firstname":"//label[text()='First Name']/ancestor::lightning-input//div/input[@name='firstName']",
+"lastname":"//label[text()='Last Name']/ancestor::lightning-input//div/input[@name='lastName']",
+"phone":"//label[text()='Phone']/ancestor::lightning-input//div/input[@name='Phone']",
+"email":"//label[text()='Email']/ancestor::lightning-input//div/input[@name='Email']",
+"accountName":"//label[text()='Account Name']/ancestor::lightning-grouped-combobox//input",
+"accountNamefirstValue":"(//lightning-base-combobox-formatted-text)[1]"
+}

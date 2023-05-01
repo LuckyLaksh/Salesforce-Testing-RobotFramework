@@ -1,6 +1,6 @@
 import openpyxl
 import datetime
-
+import os
 
 def read_data(filepath):
     # Open the workbook
@@ -39,8 +39,10 @@ def write_data(data,filepath=None,sheetname=None):
     if filepath is None:
         now = datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
         filename = f'data_{now}.xlsx'
-        path='/Users/adusumilli/Documents/GitHub/Salesforce-Testing-RobotFramework/Resources/Data'
-        wb.save(path+filename)
+        current_path = os.path.abspath(os.path.dirname(__file__))
+        data_path = os.path.join(current_path,'..',"Data")
+        excel_file_path = os.path.join(data_path,filename)
+        wb.save(excel_file_path)
     else:
         wb.save(filepath)
     

@@ -1,9 +1,11 @@
 *** Settings ***
 Documentation     Simple example using SeleniumLibrary.
 Library           SeleniumLibrary
-Library           /Users/adusumilli/Documents/GitHub/Salesforce-Testing-RobotFramework/Resources/Methods/utility.py
+Library           /Users/adusumilli/Documents/GitHub/Salesforce-Testing-RobotFramework/Resources/CustomLibrary/utility.py
 Resource          ../Resources/PageObject/KeywordDefinationFiles/Login.robot
 Resource          ../Resources/PageObject/KeywordDefinationFiles/SalesforceHomePage.robot
+Resource          ../Resources/PageObject/KeywordBusinessFlows/ContactsPage.robot
+Resource          ../Resources/PageObject/KeywordBusinessFlows/AccountsPage.robot
 
 *** Variables ***
 ${LOGIN URL}      https://test.salesforce.com
@@ -15,7 +17,8 @@ Validate Login
     Open Browser     ${LOGIN URL}    ${BROWSER}    executable_path=${driver_path}
     # Open Browser     ${LOGIN URL}    ${BROWSER}
     Login to Salesforce 
-    Sleep  5s
-    Check App Title
     Sleep  10s
+    Go to Account Page
+    Sleep  5s
+    Create a New Account  Test001  8979695431
     Close Browser

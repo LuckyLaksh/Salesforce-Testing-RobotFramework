@@ -2,7 +2,7 @@
 sandbox = {
 "username":"uat-df0ddc@coreconnect.com.70",
 "password":"Test@001",
-"security_token":"cONmoHij3i51ZNXiWdUM5gP6"
+"security_token":"9heIwmrbgW7MHyyvr5CkIht0"
 }
 
 prerelease = {
