@@ -17,6 +17,7 @@ Go to Account Page
 
 Create a New Account
     [Arguments]  ${accountName}  ${accountPhone}
+    Sleep  3s
     Click Element  ${records_list_page['newRecord']}
     Sleep  3s
     Input Text  ${accounts_modal['accountName']}  ${accountName}
