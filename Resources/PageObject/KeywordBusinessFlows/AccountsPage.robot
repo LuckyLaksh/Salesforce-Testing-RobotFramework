@@ -22,6 +22,7 @@ Create a New Account
     Sleep  3s
     Input Text  ${accounts_modal['accountName']}  ${accountName}
     Input Text  ${accounts_modal['phone']}  ${accountPhone}
+    Sleep  3s
     Click Element  ${record_modal['save']}
 
 Create Multiple Accounts
