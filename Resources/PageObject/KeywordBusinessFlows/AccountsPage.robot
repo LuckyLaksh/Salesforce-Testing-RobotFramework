@@ -5,6 +5,7 @@ Resource    ../../../venv/lib/python3.9/site-packages/cumulusci/robotframework/p
 
 *** Keywords ***
 Go to Account Page
+    Sleep  5s
     Click Element  ${app_launcher['wraffle']}
     Wait Until Element Is Visible  ${app_launcher['searchApp']}
     Input Text  ${app_launcher['searchApp']}  Accounts
@@ -24,6 +25,7 @@ Create a New Account
 
 Create Multiple Accounts
     [Arguments]  ${accountName}  ${accountPhone}
+    Sleep  3s
     Click Element  ${records_list_page['newRecord']}
     Input Text ${accounts_modal['accountName']}  ${accountName}
     Input Text ${accounts_modal['phone']}  ${accountPhone}
