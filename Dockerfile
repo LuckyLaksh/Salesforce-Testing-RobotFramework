@@ -19,7 +19,7 @@ ENV CHROMEDRIVER_PATH=/usr/local/bin/chromedriver
 ENV CHROME_BIN=/usr/bin/google-chrome
 
 # Copy the custom ChromeDriver binary to the container
-COPY chromedriver /usr/local/bin/chromedriver
+COPY driver/chromedriver /usr/local/bin/chromedriver
 # chromedriver issue is not resolved only use 
 
 # Mount the local test and results directories to the container
