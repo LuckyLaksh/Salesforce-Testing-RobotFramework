@@ -1,3 +1,6 @@
 /Results/*
 /Resources/PageObject/Credentails/*
 /venv
+/Resources/CustomLibrary/__pycache__
+/Resources/PageObject/Credentails/__pycache__
+/Resources/PageObject/Locators/__pycache__

@@ -1,7 +1,7 @@
 from simple_salesforce import Salesforce
 from collections import OrderedDict
-
-sf = Salesforce(username='uat-df0ddc@coreconnect.com.70', password='Test@001', security_token='9heIwmrbgW7MHyyvr5CkIht0',domain='test')
+import PageObject.Credentails.Credentails as creds
+sf = Salesforce(username=creds.sandbox['username'], password=creds.sandbox['password'], security_token=creds.sandbox['9heIwmrbgW7MHyyvr5CkIht0'],domain='test')
 
 def ordereddict_to_dict(ordered_dict):
     if not isinstance(ordered_dict, OrderedDict):
