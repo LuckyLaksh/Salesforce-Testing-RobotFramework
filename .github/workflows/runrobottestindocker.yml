@@ -1,22 +1,13 @@
-name: Run Robot Framework Tests in a Docker
+name: Pull and Run Docker Image - Robot Tests
 
 on:
-  workflow_dispatch:
-
+ workflow_dispatch:
 jobs:
-  test:
+  run-docker:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-
-    - name: Run Robot Framework Tests In Docker
+    - name: Pull Docker image
+      uses: docker://luckylaksh8/sfrobottest:latest
+    - name: Run Docker container
       run: |
-        docker run --rm \
-          -v ${{ github.workspace }}/Tests:/app/Tests \
-          -v ${{ github.workspace }}/Results:/app/Results \
-          -v ${{ github.workspace }}/Resources:/app/Resources \
-          luckylaksh8/sfrobottest
-          /Tests
-
+        docker run -v $(pwd)/Tests:/tests -v $(pwd)/Results:/results -v $(pwd)/Resources:/resources luckylaksh8/sfrobottest:latest
