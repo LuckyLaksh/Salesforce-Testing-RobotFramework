@@ -17,6 +17,6 @@ jobs:
           -v ${{ github.workspace }}/Tests:/app/Tests \
           -v ${{ github.workspace }}/Results:/app/Results \
           -v ${{ github.workspace }}/Resources:/app/Resources \
-          luckylaksh8/sfrobottest:latest \
+          luckylaksh8/sfrobottest
           /Tests
 
