@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Pull Docker image
-      uses: docker://luckylaksh8/sfrobottest:latest
+      uses: docker://luckylaksh8/sfrobottest
     - name: Run Docker container
       run: |
-        docker run -v $(pwd)/Tests:/tests -v $(pwd)/Results:/results -v $(pwd)/Resources:/resources luckylaksh8/sfrobottest:latest
+        docker run -v $(pwd)/Tests:/tests -v $(pwd)/Results:/results -v $(pwd)/Resources:/resources luckylaksh8/sfrobottest
