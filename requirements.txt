@@ -1,4 +1,8 @@
 robotframework
 robotframework-excellib
 robotframework-seleniumlibrary
-cumulusci
+robotframework-pabot
+webdriver-manager
+beautifulsoup4
+openpyxl
+simple-salesforce
