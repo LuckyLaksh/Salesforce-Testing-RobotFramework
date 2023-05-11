@@ -14,9 +14,9 @@ jobs:
     - name: Run Robot Framework Tests In Docker
       run: |
         docker run --rm \
-          -v ${{ github.workspace }}/Tests:/Tests \
-          -v ${{ github.workspace }}/Results:/Results \
-          -v ${{ github.workspace }}/Resources:/Resources \
+          -v ${{ github.workspace }}/Tests:/app/Tests \
+          -v ${{ github.workspace }}/Results:/app/Results \
+          -v ${{ github.workspace }}/Resources:/app/Resources \
           luckylaksh8/sfrobottest:latest \
           /Tests
 
