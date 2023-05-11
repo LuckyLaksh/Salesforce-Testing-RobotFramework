@@ -1,4 +1,4 @@
-import excel_data_driver as ed
+from excel_data_driver import excel_data_driver as ed
 from salesforce_data_driver import salesforce_data_driver as sd
 import os
 import sys
@@ -9,6 +9,7 @@ excel_path = '/Users/adusumilli/Documents/GitHub/Salesforce-Testing-RobotFramewo
 file='/Users/adusumilli/Documents/GitHub/Salesforce-Testing-RobotFramework/Resources/Data/SampleData.xlsx'
 sdobj = sd()
 data = sdobj.fetch_contact_details(sandbox)
-ed.write_data(data)
+excelobj = ed()
+excelobj.write_data(data)
 
 
