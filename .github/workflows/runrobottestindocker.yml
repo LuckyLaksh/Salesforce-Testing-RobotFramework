@@ -1,13 +1,26 @@
-name: Pull and Run Docker Image - Robot Tests
+name: Run Robot Framework Tests in a Docker
 
 on:
- workflow_dispatch:
+  workflow_dispatch:
+
+env:
+  IMAGE_NAME: sfrobottest
+  DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+  DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+
 jobs:
-  run-docker:
+  test:
     runs-on: ubuntu-latest
+
     steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
     - name: Pull Docker image
-      uses: docker://luckylaksh8/sfrobottest
-    - name: Run Docker container
       run: |
-        docker run -v $(pwd)/Tests:/tests -v $(pwd)/Results:/results -v $(pwd)/Resources:/resources luckylaksh8/sfrobottest
+        docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+        docker pull $DOCKER_USERNAME/$IMAGE_NAME:latest
+
+    - name: Run tests
+      run: |
+        docker run -v ${PWD}/Tests:app/Tests -v ${PWD}/Results:app/Results -v ${PWD}/Resources:app/Resources $DOCKER_USERNAME/$IMAGE_NAME:latest
