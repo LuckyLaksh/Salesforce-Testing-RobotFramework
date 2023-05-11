@@ -1,8 +1,8 @@
 #Salesforce Sandbox Credentails 
 sandbox = {
-"username":"uat-df0ddc@coreconnect.com.70",
+"username":"uat-b0a382@coreconnect.com.131",
 "password":"Test@001",
-"security_token":"9heIwmrbgW7MHyyvr5CkIht0"
+"security_token":"mZMROrd2YY6ELo89UNXaNPUK"
 }
 
 prerelease = {
